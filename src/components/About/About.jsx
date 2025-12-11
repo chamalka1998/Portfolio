@@ -231,7 +231,7 @@ function About() {
           viewport={{ once: true }}
         >
           {[
-            { number: "2+", label: "Years Experience" },
+            { number: "1+", label: "Years Experience" },
             { number: "15+", label: "Projects Completed" },
             { number: "10+", label: "Technologies" },
             { number: "100%", label: "Client Satisfaction" },
