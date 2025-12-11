@@ -7,7 +7,9 @@ function Hero() {
       id="hero"
       className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-6"
     >
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">Chamalka Deshan</h1>
+      <h1 className="text-4xl md:text-6xl font-bold mb-4">
+        Chamalka Deshan Edited
+      </h1>
       <p className="text-lg md:text-2xl mb-6">
         Full Stack Developer (MERN + WordPress + DevOps)
       </p>
