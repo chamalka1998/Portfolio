@@ -1,44 +1,154 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Download, ChevronDown } from "lucide-react";
 import { socialLinks } from "../../config";
 
 function Hero() {
   return (
     <section
       id="hero"
-      className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center p-6"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-center px-6 overflow-hidden"
     >
-      <h1 className="text-4xl md:text-6xl font-bold mb-4">Chamalka Deshan</h1>
-      <p className="text-lg md:text-2xl mb-6">
-        Full Stack Developer (MERN + WordPress + DevOps)
-      </p>
-      <p className="mb-6 max-w-xl">
-        Passionate Full Stack Developer specializing in JavaScript, MERN Stack,
-        and modern web technologies. I build fast, scalable, and user-focused
-        applications.
-      </p>
-      <div className="flex gap-4 mb-6">
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+      {/* Animated background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"></div>
+
+      {/* Glowing orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+      <div className="relative z-10 max-w-5xl">
+        {/* Greeting Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
         >
-          View Resume
-        </a>
-        <a
-          href="#contact"
-          className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900"
+          <span className="inline-block px-6 py-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-sm font-semibold backdrop-blur-sm">
+            👋 Welcome to my portfolio
+          </span>
+        </motion.div>
+
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-6xl md:text-8xl font-black mb-6 text-white"
         >
-          Contact Me
-        </a>
+          Chamalka{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500">
+            Deshan
+          </span>
+        </motion.h1>
+
+        {/* Title with typing effect */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="text-2xl md:text-3xl mb-8 text-gray-300 font-light"
+        >
+          Full Stack Developer
+          <span className="text-blue-400"> (MERN + WordPress + DevOps)</span>
+        </motion.p>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-gray-400 leading-relaxed"
+        >
+          Passionate Full Stack Developer specializing in JavaScript, MERN
+          Stack, and modern web technologies. I build{" "}
+          <span className="text-blue-400 font-semibold">fast</span>,{" "}
+          <span className="text-indigo-400 font-semibold">scalable</span>, and{" "}
+          <span className="text-blue-400 font-semibold">user-focused</span>{" "}
+          applications.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex flex-wrap gap-6 justify-center mb-12"
+        >
+          <motion.a
+            href="/resume.pdf"
+            target="_blank"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold overflow-hidden shadow-lg shadow-blue-500/50"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              <Download className="w-5 h-5" />
+              View Resume
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-indigo-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </motion.a>
+
+          <motion.a
+            href="#contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-slate-800 border-2 border-blue-500/50 text-white rounded-xl font-semibold hover:bg-slate-700 hover:border-blue-400 transition-all duration-300 flex items-center gap-2"
+          >
+            <Mail className="w-5 h-5" />
+            Contact Me
+          </motion.a>
+        </motion.div>
+
+        {/* Social Links */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="flex gap-6 justify-center"
+        >
+          {[
+            {
+              icon: <Github className="w-6 h-6" />,
+              href: socialLinks.github,
+              label: "GitHub",
+            },
+            {
+              icon: <Linkedin className="w-6 h-6" />,
+              href: socialLinks.linkedin,
+              label: "LinkedIn",
+            },
+          ].map((social, index) => (
+            <motion.a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -5, scale: 1.1 }}
+              className="w-14 h-14 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-blue-400 hover:border-blue-500 transition-all duration-300 group"
+              aria-label={social.label}
+            >
+              {social.icon}
+            </motion.a>
+          ))}
+        </motion.div>
       </div>
-      <div className="flex gap-4 text-2xl">
-        <a href={socialLinks.github} target="_blank">
-          GitHub
-        </a>
-        <a href={socialLinks.linkedin} target="_blank">
-          LinkedIn
-        </a>
-      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{
+          opacity: { delay: 1.5 },
+          y: { repeat: Infinity, duration: 1.5 },
+        }}
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+      >
+        <ChevronDown className="w-8 h-8 text-blue-400" />
+      </motion.div>
     </section>
   );
 }
