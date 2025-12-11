@@ -8,7 +8,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex flex-col-reverse md:flex-row items-center justify-center min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-center md:text-left px-6 overflow-hidden"
+      className="relative flex flex-col-reverse md:flex-row items-center justify-center min-h-screen pt-16 md:pt-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-950 text-center md:text-left px-6 overflow-hidden"
     >
       {/* Animated background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] opacity-20"></div>
