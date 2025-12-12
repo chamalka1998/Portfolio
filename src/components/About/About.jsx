@@ -46,18 +46,24 @@ function About() {
   return (
     <section
       id="about"
-      className="relative py-24 px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 overflow-hidden"
+      className="
+        relative py-24 px-6 overflow-hidden
+        bg-gradient-to-br 
+        from-slate-100 via-blue-100 to-slate-200
+        dark:from-slate-900 dark:via-blue-950 dark:to-indigo-950
+        text-slate-900 dark:text-white
+      "
     >
-      {/* Animated Background Elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-3xl animate-pulse delay-700"></div>
+      {/* Background Orbs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-400/10 dark:bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-400/10 dark:bg-indigo-600/20 rounded-full blur-3xl animate-pulse delay-700"></div>
 
       {/* Floating particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
+            className="absolute w-1 h-1 bg-blue-400/30 dark:bg-blue-500/30 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -85,16 +91,19 @@ function About() {
           transition={{ duration: 0.8 }}
         >
           <motion.span
-            className="inline-flex items-center gap-2 px-5 py-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-5 py-2 
+              bg-blue-500/10 dark:bg-blue-400/10 
+              border border-blue-500/30 dark:border-blue-400/30
+              text-blue-600 dark:text-blue-300 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm"
             whileHover={{ scale: 1.05 }}
           >
             <Sparkles className="w-4 h-4" />
             WHO I AM
           </motion.span>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
             About{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500 animate-gradient">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500 animate-gradient dark:from-blue-400 dark:via-blue-500 dark:to-indigo-500">
               Me
             </span>
           </h2>
@@ -121,14 +130,14 @@ function About() {
               {/* Glow effect */}
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
 
-              <div className="relative bg-slate-800/90 backdrop-blur-xl p-10 rounded-2xl border border-slate-700/50 shadow-2xl">
-                <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              <div className="relative bg-slate-200/90 dark:bg-slate-800/90 backdrop-blur-xl p-10 rounded-2xl border border-slate-300/50 dark:border-slate-700/50 shadow-2xl">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                   I'm an{" "}
-                  <span className="font-bold text-blue-400">
+                  <span className="font-bold text-blue-600 dark:text-blue-400">
                     Associate Software Engineer
                   </span>{" "}
                   with hands-on experience in full-stack development using{" "}
-                  <span className="font-semibold text-indigo-400">
+                  <span className="font-semibold text-indigo-500 dark:text-indigo-400">
                     JavaScript, React.js, Node.js, Express.js, PHP, and
                     WordPress
                   </span>
@@ -136,11 +145,11 @@ function About() {
                 </p>
 
                 <motion.div
-                  className="my-8 border-l-4 border-blue-500 pl-6 bg-blue-500/5 py-4 rounded-r-xl relative overflow-hidden"
+                  className="my-8 border-l-4 border-blue-500 dark:border-blue-400 pl-6 bg-blue-500/5 dark:bg-blue-400/10 py-4 rounded-r-xl relative overflow-hidden"
                   whileHover={{ scale: 1.02 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent"></div>
-                  <p className="text-gray-300 italic relative z-10 flex items-start gap-3">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-transparent dark:from-blue-400/20"></div>
+                  <p className="text-gray-700 dark:text-gray-300 italic relative z-10 flex items-start gap-3">
                     <span className="text-blue-400 text-2xl">"</span>
                     <span>
                       Building performance-optimized, user-friendly web
@@ -150,31 +159,35 @@ function About() {
                   </p>
                 </motion.div>
 
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                   I have experience working with{" "}
-                  <span className="font-semibold text-indigo-400">
+                  <span className="font-semibold text-indigo-500 dark:text-indigo-400">
                     Agile teams
                   </span>
                   , deploying applications with{" "}
-                  <span className="font-semibold text-indigo-400">
+                  <span className="font-semibold text-indigo-500 dark:text-indigo-400">
                     CI/CD tools
                   </span>
                   , and building both frontend and backend systems.
                 </p>
 
-                <div className="pt-6 border-t border-slate-700">
-                  <p className="text-gray-300 leading-relaxed">
+                <div className="pt-6 border-t border-slate-300 dark:border-slate-700">
+                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     Currently serving as a{" "}
-                    <span className="font-bold text-blue-400">
+                    <span className="font-bold text-blue-600 dark:text-blue-400">
                       Jr. Full Stack Developer
                     </span>{" "}
                     at
-                    <span className="font-bold text-indigo-400">
+                    <span className="font-bold text-indigo-500 dark:text-indigo-400">
                       {" "}
                       M Data Zone
                     </span>
                     , while completing my final year at
-                    <span className="font-bold text-indigo-400"> UCSC</span>.
+                    <span className="font-bold text-indigo-500 dark:text-indigo-400">
+                      {" "}
+                      UCSC
+                    </span>
+                    .
                   </p>
                 </div>
               </div>
@@ -200,7 +213,7 @@ function About() {
                 {/* Card glow */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
 
-                <div className="relative bg-slate-800/80 backdrop-blur-sm p-8 rounded-xl border border-slate-700/50 shadow-xl h-full">
+                <div className="relative bg-slate-200/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-xl border border-slate-300/50 dark:border-slate-700/50 shadow-xl h-full">
                   <motion.div
                     className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white mb-5 shadow-lg shadow-blue-500/50"
                     whileHover={{ rotate: 360 }}
@@ -209,11 +222,11 @@ function About() {
                     {item.icon}
                   </motion.div>
 
-                  <h3 className="text-xl font-bold text-white mb-3">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
                     {item.title}
                   </h3>
 
-                  <p className="text-sm text-gray-400 leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -244,9 +257,9 @@ function About() {
             >
               <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-300"></div>
 
-              <div className="relative bg-slate-800/70 backdrop-blur-sm p-8 rounded-xl text-center border border-slate-700/50">
+              <div className="relative bg-slate-200/70 dark:bg-slate-800/70 backdrop-blur-sm p-8 rounded-xl text-center border border-slate-300/50 dark:border-slate-700/50">
                 <motion.h3
-                  className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-3"
+                  className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-3 dark:from-blue-400 dark:to-indigo-500"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -258,7 +271,7 @@ function About() {
                 >
                   {stat.number}
                 </motion.h3>
-                <p className="text-gray-400 text-sm font-semibold uppercase tracking-wider">
+                <p className="text-gray-700 dark:text-gray-300 text-sm font-semibold uppercase tracking-wider">
                   {stat.label}
                 </p>
               </div>

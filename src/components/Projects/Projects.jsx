@@ -16,10 +16,10 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-24 px-6 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-hidden"
+      className="relative py-24 px-6 bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden"
     >
       {/* Background effects */}
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 dark:bg-indigo-600/20 rounded-full blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
@@ -30,12 +30,12 @@ function Projects() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2 bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+          <span className="inline-flex items-center gap-2 px-5 py-2 bg-indigo-500/10 dark:bg-indigo-600/10 border border-indigo-500/30 dark:border-indigo-400/30 text-indigo-400 dark:text-indigo-300 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
             <Folder className="w-4 h-4" />
             PORTFOLIO
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
             Featured{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
               Projects

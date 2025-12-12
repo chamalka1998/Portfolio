@@ -7,10 +7,15 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-24 px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden"
+      className="
+        relative py-24 px-6 overflow-hidden
+        bg-gradient-to-br from-slate-100 via-blue-100 to-slate-200
+        dark:from-slate-950 dark:via-blue-950 dark:to-slate-950
+        text-slate-900 dark:text-white
+      "
     >
       {/* Background effects */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-400/10 dark:bg-blue-600/20 rounded-full blur-3xl"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
@@ -21,14 +26,19 @@ function Experience() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+          <span
+            className="inline-flex items-center gap-2 px-5 py-2
+            bg-blue-500/10 dark:bg-blue-400/10
+            border border-blue-500/30 dark:border-blue-400/30
+            text-blue-600 dark:text-blue-300 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm"
+          >
             <Briefcase className="w-4 h-4" />
             CAREER JOURNEY
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
             Work{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 dark:from-blue-400 dark:to-indigo-500">
               Experience
             </span>
           </h2>
@@ -45,7 +55,10 @@ function Experience() {
         {/* Timeline */}
         <div className="relative">
           {/* Vertical Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-indigo-500 to-blue-500"></div>
+          <div
+            className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5
+            bg-gradient-to-b from-blue-500 via-indigo-500 to-blue-500"
+          ></div>
 
           <div className="space-y-12">
             {experience.map((job, index) => (
@@ -69,7 +82,7 @@ function Experience() {
                     stiffness: 200,
                     delay: index * 0.2 + 0.3,
                   }}
-                  className="absolute left-0 md:left-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full border-4 border-slate-900 shadow-lg shadow-blue-500/50 transform -translate-x-1/2 z-10"
+                  className="absolute left-0 md:left-1/2 w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full border-4 border-slate-100 dark:border-slate-900 shadow-lg shadow-blue-500/50 transform -translate-x-1/2 z-10"
                 ></motion.div>
 
                 {/* Content Card */}
@@ -80,25 +93,25 @@ function Experience() {
                   {/* Card glow */}
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
 
-                  <div className="relative bg-slate-800/90 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50 shadow-xl">
+                  <div className="relative bg-slate-200/80 dark:bg-slate-800/80 backdrop-blur-sm p-8 rounded-2xl border border-slate-300/50 dark:border-slate-700/50 shadow-xl">
                     {/* Date Badge */}
-                    <div className="flex items-center gap-2 text-blue-400 mb-4">
+                    <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-4">
                       <Calendar className="w-4 h-4" />
                       <span className="text-sm font-semibold">{job.date}</span>
                     </div>
 
                     {/* Position */}
-                    <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {job.position}
                     </h3>
 
                     {/* Company */}
-                    <p className="text-indigo-400 font-semibold mb-4 text-lg">
+                    <p className="text-indigo-500 dark:text-indigo-400 font-semibold mb-4 text-lg">
                       {job.company}
                     </p>
 
                     {/* Description */}
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                       {job.description}
                     </p>
                   </div>

@@ -53,11 +53,11 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 px-6 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 overflow-hidden"
+      className="relative py-24 px-6 bg-gradient-to-br from-slate-200 via-slate-100 to-slate-200 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden"
     >
       {/* Background effects */}
-      <div className="absolute top-1/2 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/2 right-0 w-96 h-96 bg-blue-600/10 dark:bg-blue-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 dark:bg-indigo-600/20 rounded-full blur-3xl"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
@@ -68,12 +68,12 @@ function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <span className="inline-flex items-center gap-2 px-5 py-2 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
+          <span className="inline-flex items-center gap-2 px-5 py-2 bg-blue-500/10 dark:bg-blue-600/10 border border-blue-500/30 dark:border-blue-400/30 text-blue-400 dark:text-blue-300 rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
             <Send className="w-4 h-4" />
             GET IN TOUCH
           </span>
 
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
             Let's{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
               Connect
@@ -88,7 +88,7 @@ function Contact() {
             transition={{ duration: 0.8, delay: 0.3 }}
           />
 
-          <p className="text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 text-lg mt-6 max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Feel free to reach
             out!
           </p>
@@ -116,30 +116,32 @@ function Contact() {
                 {item.href ? (
                   <a
                     href={item.href}
-                    className="flex items-start gap-5 p-6 bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50 hover:border-blue-500/50 transition-all duration-300"
+                    className="flex items-start gap-5 p-6 bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-300 dark:border-slate-700/50 hover:border-blue-500/50 dark:hover:border-blue-400/50 transition-all duration-300"
                   >
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400 mb-1 font-semibold uppercase tracking-wider">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1 font-semibold uppercase tracking-wider">
                         {item.label}
                       </p>
-                      <p className="text-lg text-white group-hover:text-blue-400 transition-colors">
+                      <p className="text-lg text-slate-900 dark:text-white group-hover:text-blue-400 transition-colors">
                         {item.value}
                       </p>
                     </div>
                   </a>
                 ) : (
-                  <div className="flex items-start gap-5 p-6 bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-700/50">
+                  <div className="flex items-start gap-5 p-6 bg-slate-100/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-slate-300 dark:border-slate-700/50">
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-sm text-gray-400 mb-1 font-semibold uppercase tracking-wider">
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-1 font-semibold uppercase tracking-wider">
                         {item.label}
                       </p>
-                      <p className="text-lg text-white">{item.value}</p>
+                      <p className="text-lg text-slate-900 dark:text-white">
+                        {item.value}
+                      </p>
                     </div>
                   </div>
                 )}
@@ -154,7 +156,7 @@ function Contact() {
               transition={{ delay: 0.4 }}
               className="pt-8"
             >
-              <p className="text-gray-400 mb-6 font-semibold uppercase tracking-wider text-sm">
+              <p className="text-gray-600 dark:text-gray-400 mb-6 font-semibold uppercase tracking-wider text-sm">
                 Follow Me
               </p>
               <div className="flex gap-4">
@@ -166,7 +168,7 @@ function Contact() {
                     rel="noopener noreferrer"
                     whileHover={{ y: -5, scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-14 h-14 bg-slate-800/70 backdrop-blur-sm border border-slate-700 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-600 hover:to-indigo-600 hover:border-transparent transition-all duration-300 shadow-lg"
+                    className="w-14 h-14 bg-slate-100/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-300 dark:border-slate-700 rounded-xl flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-white hover:bg-gradient-to-br hover:from-blue-600 hover:to-indigo-600 hover:border-transparent transition-all duration-300 shadow-lg"
                     aria-label={social.label}
                   >
                     {social.icon}
@@ -187,11 +189,11 @@ function Contact() {
             {/* Card glow */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
 
-            <div className="relative bg-slate-800/90 backdrop-blur-sm p-10 rounded-2xl border border-slate-700/50 shadow-xl h-full flex flex-col justify-center">
-              <h3 className="text-3xl font-bold text-white mb-6">
+            <div className="relative bg-slate-100/90 dark:bg-slate-800/90 backdrop-blur-sm p-10 rounded-2xl border border-slate-300 dark:border-slate-700/50 shadow-xl h-full flex flex-col justify-center">
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
                 Ready to start a project?
               </h3>
-              <p className="text-gray-300 mb-8 leading-relaxed text-lg">
+              <p className="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed text-lg">
                 I'm always open to discussing new opportunities, creative ideas,
                 or partnership possibilities. Let's build something amazing
                 together!
