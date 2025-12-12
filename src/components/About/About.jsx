@@ -245,7 +245,7 @@ function About() {
         >
           {[
             { number: "1+", label: "Years Experience" },
-            { number: "15+", label: "Projects Completed" },
+            { number: "15+", label: "Projects Contributed" },
             { number: "10+", label: "Technologies" },
             { number: "100%", label: "Client Satisfaction" },
           ].map((stat, index) => (
