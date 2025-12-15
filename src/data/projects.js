@@ -1,32 +1,33 @@
 export const projects = [
   {
-    title: "Court Booking Platform",
-    description: "MERN + Firebase application for booking courts.",
-    tech: "React, Node.js, MongoDB, Firebase",
-    link: "#",
+    title: "TLC Coaching Member Portal",
+    description:
+      "The TLC Coaching Member Portal is a comprehensive practice management platform designed for chiropractic coaching professionals. Here's what it offers",
+    tech: "React, Node.js, PostgreSQL",
+    link: "https://members.tlc4u.life",
   },
   {
-    title: "Vehicle Importer Website",
-    description: "Custom WordPress theme for Carnex.",
+    title: "360 Degrees Global Executive Talent Search",
+    description: "360 Degrees Global Executive Talent Search Jobportal.",
     tech: "WordPress, PHP, JS",
-    link: "#",
+    link: "https://360degrees.lk/",
+  },
+  {
+    title: "StackSense",
+    description: "Subscription SaaS management platform.",
+    tech: "React, Node.js, PostgreSQL",
+    link: "https://stacktrak.ai",
   },
   {
     title: "Thinakkural News Portal",
     description: "Vue.js news portal fetching WordPress backend content.",
     tech: "Vue.js, WordPress",
-    link: "#",
-  },
-  {
-    title: "StackSense",
-    description: "AI-powered SaaS management platform.",
-    tech: "React, Node.js, MongoDB, AI",
-    link: "#",
+    link: "https://thinakkural.lk/",
   },
   {
     title: "Fitness App",
     description: "Mobile app using React Native & Node.js.",
     tech: "React Native, Node.js",
-    link: "#",
+    link: "https://bootble.com/",
   },
 ];

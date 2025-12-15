@@ -185,7 +185,7 @@ function About() {
                     , while completing my final year at
                     <span className="font-bold text-indigo-500 dark:text-indigo-400">
                       {" "}
-                      UCSC
+                      University of Colombo School of Computing (UCSC)
                     </span>
                     .
                   </p>
